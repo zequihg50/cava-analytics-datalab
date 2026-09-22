@@ -1,0 +1,19 @@
+#!/bin/bash
+
+Rscript -e '
+options(repos="https://cloud.r-project.org")
+
+if (!requireNamespace("remotes", quietly=TRUE)) {
+  install.packages("remotes")
+}
+
+# Verify rJava works
+if (!requireNamespace("rJava", quietly = TRUE)) install.packages("rJava")
+library(rJava)
+
+# Install pak if needed
+if (!requireNamespace("pak", quietly = TRUE)) install.packages("pak")
+
+# Install CAVAanalytics
+pak::pkg_install("un-fao/CAVAanalytics")
+'

@@ -1,0 +1,27 @@
+name: datalab
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - sqlite
+  - requests
+  - pandas
+  - xarray
+  - netcdf4
+  - dask
+  - matplotlib
+  - cartopy
+  - s3fs
+  - seaborn
+  - basemap
+  - ipykernel
+  - 'libnetcdf<4.9'
+  - r-base
+  - r-pak
+  - r-ggplot2
+  - r-loader
+  - r-transformer
+  - r-visualizer
+  - r-irkernel
+  - pip:
+    - cavapy
