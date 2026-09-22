@@ -11,5 +11,3 @@ dependencies:
   - cartopy
   - fsspec
   - netcdf4
-  - pip:
-    - cavapy
