@@ -17,3 +17,5 @@ RUN conda create -n cavapy && \
     nco cdo && \
     python -m ipykernel install --name cavapy --display-name "cavapy" --prefix /opt/conda && \
     pip install cavapy
+
+COPY . ${HOME}
