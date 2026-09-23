@@ -4,7 +4,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
 
 USER root
-RUN apt-get update && apt-get install -y xorg git wget build-essential tzdata && apt-get clean
+RUN apt-get update && apt-get install -y xorg git wget build-essential tzdata && apt-get clean && chown -R $NB_USER:$NB_USER /home/$NB_USER
 
 USER jovyan
 RUN conda install mamba -y -n base -c conda-forge && \
