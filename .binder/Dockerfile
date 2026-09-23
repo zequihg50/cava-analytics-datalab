@@ -15,4 +15,5 @@ RUN conda create -n cavapy && \
     source /opt/conda/bin/activate cavapy && \
     mamba install -y jupyter xarray pandas geopandas shapely matplotlib cartopy netcdf4 cftime dask iris zarr fsspec s3fs h5py gcsfs siphon beautifulsoup4 scikit-learn h5netcdf python-swiftclient \
     nco cdo && \
-    python -m ipykernel install --name cavapy --display-name "cavapy" --prefix /opt/conda
+    python -m ipykernel install --name cavapy --display-name "cavapy" --prefix /opt/conda && \
+    pip install cavapy
