@@ -1,4 +1,4 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/zequihg50/cava-analytics-datalab/HEAD?urlpath=%2Fdoc%2Ftree%2Fmain.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://gesis.mybinder.org/v2/gh/zequihg50/cava-analytics-datalab/HEAD?urlpath=%2Fdoc%2Ftree%2Fmain.ipynb)
 
 # CAVA Analytics DataLab
 
