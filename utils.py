@@ -6,45 +6,6 @@ import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
 import cartopy.feature as cfeature
 
-def ray_casting(x, y, poly):
-    n = len(poly)
-    inside = False
-    p1x, p1y = poly[0]
-    for i in range(n + 1):
-        p2x, p2y = poly[i % n]
-        if y > min(p1y, p2y):
-            if y <= max(p1y, p2y):
-                if x <= max(p1x, p2x):
-                    if p1y != p2y:
-                        xinters = (y - p1y) * (p2x - p1x) / (p2y - p1y) + p1x
-                    if p1x == p2x or x <= xinters:
-                        inside = not inside
-        p1x, p1y = p2x, p2y
-    return inside
-
-def count_events(arr, n):
-    arr = np.asarray(arr, dtype=bool)
-    padded = np.r_[False, arr, False]
-    changes = np.diff(padded.astype(int))
-
-    starts = np.where(changes == 1)[0]
-    ends = np.where(changes == -1)[0]
-
-    return np.sum((ends - starts) >= n)
-
-def count_longest_event(arr):
-    arr = np.asarray(arr, dtype=bool)
-    if not arr.any():
-        return 0
-
-    padded = np.r_[False, arr, False]
-    changes = np.diff(padded.astype(int))
-
-    starts = np.where(changes == 1)[0]
-    ends = np.where(changes == -1)[0]
-
-    return np.max(ends - starts)
-
 def plot_annual_mean_and_trend(results, mask, settings, indices, columns, titles, extent):
     fig, axes = plt.subplots(
         nrows=len(indices),
@@ -66,16 +27,9 @@ def plot_annual_mean_and_trend(results, mask, settings, indices, columns, titles
                 cmap=s["cmap"], vmin=s["vmin"], vmax=s["vmax"],
                 add_colorbar=True,
                 cbar_kwargs={
-                    "shrink": 0.7,
-                    "label": (
-                        "Annual precipitation (mm)"
-                        if idx == "prcptot" and col == "mean"
-                        else "Days/year"
-                        if idx in ["dd", "r20"] and col == "mean"
-                        else "Trend (units/year)"
-                    ),
-                },
-            )
+                    #"shrink": 0.75, "label": ("Annual precipitation\n(mm)" if idx == "prcptot" and col == "mean" else "Days/year" if idx in ["dd", "r20"] and col == "mean" else "Trend (units/year)"),
+                    "shrink": 0.75, "label": data.attrs["units"],
+                })
     
             # Overlay significant grid cells on the trend column
             if col == "trend":
