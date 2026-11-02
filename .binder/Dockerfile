@@ -1,5 +1,7 @@
 FROM zequihg50/cava-datalab:20261030
 
+COPY --chown=jovyan:users ../main.ipynb ../ne_110m_admin_0_countries.geojson ../README.md ../temp-and-precip-indicators-python.ipynb ../utils.py ../yemen-notebook-R.ipynb /home/jovyan/
+
 EXPOSE 8888
 
 CMD ["micromamba", "run", "-n", "base", "jupyter", "lab", \
