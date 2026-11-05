@@ -27,6 +27,10 @@ docker run -n cava-datalab -p 8888:8888 zequihg50/cava-datalab:20261102
 
 The URL of your JupyterLab instance will be displayed on the terminal, copy/paste it in the web browser and enjoy!
 
+## Running at IFCA
+
+The Instituto de Física de Cantabria (IFCA, CSIC-UC) provides computational services to users under specific agreements. If you have access to IFCA resources, you can launch the datalb using the following launcher: [![IFCA](https://img.shields.io/badge/launch-IFCA-orange)](https://hub.climate.ifca.es/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fzequihg50%2Fcava-analytics-datalab&urlpath=lab%2Ftree%2Fcava-analytics-datalab%2Fmain.ipynb&branch=main)
+
 # References
 
 - CAVA platform - https://cavaplatform.fao.org
